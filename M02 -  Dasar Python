@@ -1,0 +1,755 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/hwan53633-max/24_Hermawan-Agus-Pratama_PCD/blob/main/M02%20-%20%20Dasar%20Python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# TUGAS PRAKTIKUM PYTHON DASAR\n",
+        "\n",
+        "Materi: Output, String, Numerik, Perulangan, Fungsi, dan DateTime\n",
+        "\n",
+        "## A. Tujuan praktikum\n",
+        "\n",
+        "Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:\n",
+        "\n",
+        "1. Menggunakan `print()` untuk menampilkan informasi.\n",
+        "2. Menyimpan dan mengolah string menggunakan variabel.\n",
+        "3. Melakukan operasi matematika menggunakan tipe data numerik.\n",
+        "4. Menerima input pengguna menggunakan `input()`.\n",
+        "5. Menggunakan perulangan `for` dan `while`.\n",
+        "6. Membuat dan memanggil fungsi menggunakan `def`.\n",
+        "7. Menampilkan waktu menggunakan modul `datetime`.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "FYwHSWXHMElZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## B. Ketentuan praktikum\n",
+        "\n",
+        "- Kerjakan menggunakan Python di VS Code, IDLE, atau Google Colab.\n",
+        "- Setiap program harus memiliki komentar untuk menjelaskan bagian penting.\n",
+        "- Gunakan nama variabel yang mudah dipahami.\n",
+        "- Jalankan program dan periksa hasil output-nya.\n",
+        "- Kumpulkan source code dan screenshot hasil eksekusi setiap tugas.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "hoMTQvb8MM-b"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## C. Daftar tugas praktikum\n",
+        "\n",
+        "### **Tugas 1 — Menampilkan Informasi dengan `print()`**\n",
+        "\n",
+        "Buat program untuk menampilkan biodata mahasiswa dengan ketentuan:\n",
+        "\n",
+        "- Tampilkan judul `BIODATA MAHASISWA`.\n",
+        "- Tampilkan nama, NIM, program studi, dan universitas.\n",
+        "- Gunakan petik tunggal dan petik ganda.\n",
+        "- Gunakan `print()` kosong untuk membuat baris kosong.\n",
+        "- Gunakan `\\n` untuk menampilkan beberapa baris dari satu perintah `print()`.\n",
+        "- Gunakan karakter `=` atau `-` sebagai garis pemisah.\n",
+        "\n",
+        "Output yang diharapkan: biodata mahasiswa tersusun rapi di terminal."
+      ],
+      "metadata": {
+        "id": "bOixaY00MRRD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Tugas 1\n",
+        "\n",
+        "print(\"=\" * 40)\n",
+        "\n",
+        "\n",
+        "print(\"BIODATA MAHASISWA\")\n",
+        "print(\"-\" * 40)\n",
+        "\n",
+        "print('Nama           : Hermawan Agus Pratama')\n",
+        "\n",
+        "print(\"NIM            : 24552021009\")\n",
+        "\n",
+        "print(\"Program Studi  : Teknik Informatika\")\n",
+        "\n",
+        "print(\"Universitas    : Universitas Islam Raden Rahmat Malang\")\n",
+        "\n",
+        "print()\n",
+        "print(\"Data Mahasiswa:\\nNama: Hermawan Agus Pratama\\nNIM: 24552021009\")\n",
+        "\n",
+        "print(\"-\" * 40)\n",
+        "print(\"BIODATA SELESAI\")\n",
+        "print(\"=\" * 40)\n"
+      ],
+      "metadata": {
+        "id": "FDY95lE6Q1E9",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1cd88c6f-e782-459b-f036-f8c9f3955f00"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "========================================\n",
+            "BIODATA MAHASISWA\n",
+            "----------------------------------------\n",
+            "Nama           : Hermawan Agus Pratama\n",
+            "NIM            : 24552021009\n",
+            "Program Studi  : Teknik Informatika\n",
+            "Universitas    : Universitas Islam Raden Rahmat Malang\n",
+            "\n",
+            "Data Mahasiswa:\n",
+            "Nama: Hermawan Agus Pratama\n",
+            "NIM: 24552021009\n",
+            "----------------------------------------\n",
+            "BIODATA SELESAI\n",
+            "========================================\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### **Tugas 2 — Mengolah String**\n",
+        "\n",
+        "Buat program untuk mengolah data nama dan kalimat dengan ketentuan:\n",
+        "\n",
+        "- Simpan nama depan dan nama belakang dalam variabel.\n",
+        "- Gabungkan keduanya menjadi nama lengkap.\n",
+        "- Tampilkan sebuah kalimat menggunakan `upper()`, `lower()`, `capitalize()`, dan `title()`.\n",
+        "- Hitung jumlah kemunculan huruf `a` menggunakan `count()`.\n",
+        "- Tampilkan hasil setiap operasi.\n",
+        "\n",
+        "Output yang diharapkan: nama lengkap, perubahan format kalimat, dan jumlah karakter.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "DPsfqeyKMW4q"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tugas 2\n",
+        "\n",
+        "\n",
+        "\n",
+        "nama_depan = \"Hermawan\"\n",
+        "nama_belakang = \"Pratama\"\n",
+        "\n",
+        "\n",
+        "nama_lengkap = nama_depan + \" \" + nama_belakang\n",
+        "\n",
+        "\n",
+        "print(\"=== DATA NAMA ===\")\n",
+        "print(\"Nama depan     :\", nama_depan)\n",
+        "print(\"Nama belakang  :\", nama_belakang)\n",
+        "print(\"Nama lengkap   :\", nama_lengkap)\n",
+        "\n",
+        "kalimat = \"saya sedang belajar bahasa pemrograman python\"\n",
+        "\n",
+        "print(\"\\n=== OPERASI STRING ===\")\n",
+        "\n",
+        "\n",
+        "print(\"Uppercase:\", kalimat.upper())\n",
+        "\n",
+        "\n",
+        "print(\"Lowercase:\", kalimat.lower())\n",
+        "\n",
+        "\n",
+        "print(\"Capitaliz:\", kalimat.capitalize())\n",
+        "\n",
+        "print(\"Title :\", kalimat.title())\n",
+        "\n",
+        "\n",
+        "jumlah_huruf_a = kalimat.count(\"a\")\n",
+        "\n",
+        "print(\"\\n=== PERHITUNGAN HURUF ===\")\n",
+        "print(\"Kalimat          :\", kalimat)\n",
+        "print(\"Jumlah huruf 'a'  :\", jumlah_huruf_a)\n"
+      ],
+      "metadata": {
+        "id": "OAxMoRxdQ2lL",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "cb4db810-e248-4c46-a2ba-1d2d0f0403b8"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== DATA NAMA ===\n",
+            "Nama depan     : Hermawan\n",
+            "Nama belakang  : Pratama\n",
+            "Nama lengkap   : Hermawan Pratama\n",
+            "\n",
+            "=== OPERASI STRING ===\n",
+            "Uppercase: SAYA SEDANG BELAJAR BAHASA PEMROGRAMAN PYTHON\n",
+            "Lowercase: saya sedang belajar bahasa pemrograman python\n",
+            "Capitaliz: Saya sedang belajar bahasa pemrograman python\n",
+            "Title : Saya Sedang Belajar Bahasa Pemrograman Python\n",
+            "\n",
+            "=== PERHITUNGAN HURUF ===\n",
+            "Kalimat          : saya sedang belajar bahasa pemrograman python\n",
+            "Jumlah huruf 'a'  : 10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### **Tugas 3 — Operasi Matematika**\n",
+        "\n",
+        "Buat program kalkulator sederhana dengan ketentuan:\n",
+        "\n",
+        "- Minta pengguna memasukkan dua angka.\n",
+        "- Konversikan input menjadi `int` atau `float`.\n",
+        "- Hitung penjumlahan, pengurangan, perkalian, pembagian, dan pangkat.\n",
+        "- Tampilkan hasil setiap operasi.\n",
+        "- Tambahkan perhitungan luas persegi panjang berdasarkan input panjang dan lebar.\n",
+        "\n",
+        "Output yang diharapkan: hasil kalkulasi berdasarkan angka yang dimasukkan pengguna.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "k6CeUCbrMbnE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tugas 3\n",
+        "\n",
+        "\n",
+        "print(\"=== KALKULATOR SEDERHANA ===\")\n",
+        "\n",
+        "angka1 = float(input(\"Masukkan angka pertama: \"))\n",
+        "angka2 = float(input(\"Masukkan angka kedua: \"))\n",
+        "\n",
+        "\n",
+        "penjumlahan = angka1 + angka2\n",
+        "pengurangan = angka1 - angka2\n",
+        "perkalian = angka1 * angka2\n",
+        "pangkat = angka1 ** angka2\n",
+        "\n",
+        "\n",
+        "print(\"\\n=== HASIL PERHITUNGAN ===\")\n",
+        "print(\"Penjumlahan :\", penjumlahan)\n",
+        "print(\"Pengurangan :\", pengurangan)\n",
+        "print(\"Perkalian   :\", perkalian)\n",
+        "\n",
+        "if angka2 != 0:\n",
+        "    pembagian = angka1 / angka2\n",
+        "    print(\"Pembagian   :\", pembagian)\n",
+        "else:\n",
+        "    print(\"Pembagian   : Tidak dapat membagi dengan nol\")\n",
+        "\n",
+        "print(\"Pangkat     :\", pangkat)\n",
+        "\n",
+        "print(\"\\n=== LUAS PERSEGI PANJANG ===\")\n",
+        "\n",
+        "panjang = float(input(\"Masukkan panjang: \"))\n",
+        "lebar = float(input(\"Masukkan lebar: \"))\n",
+        "\n",
+        "luas = panjang * lebar\n",
+        "\n",
+        "print(\"Panjang :\", panjang)\n",
+        "print(\"Lebar   :\", lebar)\n",
+        "print(\"Luas    :\", luas)\n",
+        "\n",
+        "print(\"\\nProgram kalkulator selesai.\")\n"
+      ],
+      "metadata": {
+        "id": "uLN-ckVUQ5i8",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "ccdc121f-ed2c-4880-f00f-65ca8ecba3be"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== KALKULATOR SEDERHANA ===\n",
+            "Masukkan angka pertama: 3\n",
+            "Masukkan angka kedua: 4\n",
+            "\n",
+            "=== HASIL PERHITUNGAN ===\n",
+            "Penjumlahan : 7.0\n",
+            "Pengurangan : -1.0\n",
+            "Perkalian   : 12.0\n",
+            "Pembagian   : 0.75\n",
+            "Pangkat     : 81.0\n",
+            "\n",
+            "=== LUAS PERSEGI PANJANG ===\n",
+            "Masukkan panjang: 67\n",
+            "Masukkan lebar: 8\n",
+            "Panjang : 67.0\n",
+            "Lebar   : 8.0\n",
+            "Luas    : 536.0\n",
+            "\n",
+            "Program kalkulator selesai.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### **Tugas 4 — Perulangan `for` dan `while`**\n",
+        "\n",
+        "Buat program untuk menampilkan data mahasiswa dengan ketentuan:\n",
+        "\n",
+        "- Buat daftar minimal lima nama mahasiswa.\n",
+        "- Tampilkan semua nama menggunakan `for`.\n",
+        "- Tampilkan angka 1 sampai 10 menggunakan `range()`.\n",
+        "- Tampilkan kembali daftar nama menggunakan `while` dan `len()`.\n",
+        "- Buat perulangan `while` untuk menampilkan bilangan genap dari 2 sampai 20.\n",
+        "\n",
+        "Output yang diharapkan: daftar nama dan deret angka yang tampil sesuai ketentuan.\n"
+      ],
+      "metadata": {
+        "id": "EGTN0Gen31YR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tugas 4\n",
+        "\n",
+        "daftar_mahasiswa = [\n",
+        "    \"Hermawan\",\n",
+        "    \"shopy\",\n",
+        "    \"saep\",\n",
+        "    \"rizal\",\n",
+        "    \"roqib\"\n",
+        "]\n",
+        "\n",
+        "\n",
+        "print(\"=== DAFTAR MAHASISWA MENGGUNAKAN FOR ===\")\n",
+        "\n",
+        "for nama in daftar_mahasiswa:\n",
+        "    print(nama)\n",
+        "\n",
+        "\n",
+        "print(\"\\n=== ANGKA 1 SAMPAI 10 ===\")\n",
+        "\n",
+        "for angka in range(1, 11):\n",
+        "    print(angka)\n",
+        "\n",
+        "\n",
+        "print(\"\\n=== DAFTAR MAHASISWA MENGGUNAKAN WHILE ===\")\n",
+        "\n",
+        "indeks = 0\n",
+        "\n",
+        "while indeks < len(daftar_mahasiswa):\n",
+        "    print(daftar_mahasiswa[indeks])\n",
+        "    indeks += 1\n",
+        "\n",
+        "\n",
+        "print(\"\\n=== BILANGAN GENAP 2 SAMPAI 20 ===\")\n",
+        "\n",
+        "bilangan = 2\n",
+        "\n",
+        "while bilangan <= 20:\n",
+        "    print(bilangan)\n",
+        "    bilangan += 2\n",
+        "\n",
+        "# Penutup program\n",
+        "print(\"\\nProgram perulangan selesai.\")\n"
+      ],
+      "metadata": {
+        "id": "Z7L0qnViQ6m7",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bb9958d1-c7ba-4e27-afe0-eeb7d5e8c229"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== DAFTAR MAHASISWA MENGGUNAKAN FOR ===\n",
+            "Hermawan\n",
+            "shopy\n",
+            "saep\n",
+            "rizal\n",
+            "roqib\n",
+            "\n",
+            "=== ANGKA 1 SAMPAI 10 ===\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "10\n",
+            "\n",
+            "=== DAFTAR MAHASISWA MENGGUNAKAN WHILE ===\n",
+            "Hermawan\n",
+            "shopy\n",
+            "saep\n",
+            "rizal\n",
+            "roqib\n",
+            "\n",
+            "=== BILANGAN GENAP 2 SAMPAI 20 ===\n",
+            "2\n",
+            "4\n",
+            "6\n",
+            "8\n",
+            "10\n",
+            "12\n",
+            "14\n",
+            "16\n",
+            "18\n",
+            "20\n",
+            "\n",
+            "Program perulangan selesai.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Tugas 5 — Fungsi dan Waktu**\n",
+        "\n",
+        "Buat program pencatatan aktivitas belajar dengan ketentuan:\n",
+        "\n",
+        "- Impor modul `datetime`.\n",
+        "- Buat fungsi bernama `catat_waktu()`.\n",
+        "- Tampilkan pesan `Aktivitas selesai`.\n",
+        "- Tampilkan waktu saat fungsi dijalankan menggunakan `datetime.datetime.now()`.\n",
+        "- Panggil fungsi sebelum dan sesudah perulangan.\n",
+        "- Gunakan perulangan `for` untuk menampilkan proses pengerjaan lima soal.\n",
+        "\n",
+        "Output yang diharapkan: pesan aktivitas, waktu pelaksanaan, dan proses pengerjaan soal.\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "nV-Ybrzz3qVZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Tugas 5\n",
+        "\n",
+        "\n",
+        "import datetime\n",
+        "\n",
+        "\n",
+        "def catat_waktu():\n",
+        "\n",
+        "    waktu_sekarang = datetime.datetime.now()\n",
+        "\n",
+        "\n",
+        "    print(\"Aktivitas selesai\")\n",
+        "    print(\"Waktu pelaksanaan:\", waktu_sekarang.strftime(\"%d-%m-%Y %H:%M:%S\"))\n",
+        "    print(\"-\" * 40)\n",
+        "\n",
+        "print(\"=== WAKTU MULAI BELAJAR ===\")\n",
+        "catat_waktu()\n",
+        "\n",
+        "print(\"\\n=== PROSES PENGERJAAN SOAL ===\")\n",
+        "\n",
+        "for soal in range(1, 6):\n",
+        "    print(\"Mengerjakan soal ke-\", soal)\n",
+        "\n",
+        "print(\"\\n=== WAKTU SELESAI BELAJAR ===\")\n",
+        "catat_waktu()\n",
+        "\n",
+        "print(\"Program pencatatan aktivitas belajar selesai.\")\n"
+      ],
+      "metadata": {
+        "id": "sEt5eN-_RBbd",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "45c3e439-14c1-4de4-d9fc-11ad347c5f96"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== WAKTU MULAI BELAJAR ===\n",
+            "Aktivitas selesai\n",
+            "Waktu pelaksanaan: 28-10-2026 02:56:59\n",
+            "----------------------------------------\n",
+            "\n",
+            "=== PROSES PENGERJAAN SOAL ===\n",
+            "Mengerjakan soal ke- 1\n",
+            "Mengerjakan soal ke- 2\n",
+            "Mengerjakan soal ke- 3\n",
+            "Mengerjakan soal ke- 4\n",
+            "Mengerjakan soal ke- 5\n",
+            "\n",
+            "=== WAKTU SELESAI BELAJAR ===\n",
+            "Aktivitas selesai\n",
+            "Waktu pelaksanaan: 28-10-2026 02:56:59\n",
+            "----------------------------------------\n",
+            "Program pencatatan aktivitas belajar selesai.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## D. Tugas proyek akhir — Sistem Rekap Nilai Mahasiswa\n",
+        "\n",
+        "Gabungkan seluruh materi dalam satu program sederhana dengan ketentuan berikut.\n",
+        "\n",
+        "Studi kasus\n",
+        "\n",
+        "Sebuah program digunakan untuk mencatat data mahasiswa, menerima nilai, menghitung rata-rata, dan menampilkan waktu penyelesaian proses.\n",
+        "\n",
+        "Spesifikasi program:\n",
+        "\n",
+        "1. Tampilkan judul program menggunakan `print()` dan garis pemisah.\n",
+        "2. Minta input nama dan NIM mahasiswa.\n",
+        "3. Minta pengguna memasukkan nilai tiga mata kuliah.\n",
+        "4. Hitung total dan rata-rata nilai menggunakan operasi matematika.\n",
+        "5. Tampilkan nama mahasiswa dalam format huruf kapital menggunakan `upper()`.\n",
+        "6. Gunakan `for` untuk menampilkan seluruh nilai.\n",
+        "7. Gunakan `while` untuk menampilkan nomor urut mata kuliah.\n",
+        "8. Buat fungsi `tampilkan_hasil()` untuk menampilkan total dan rata-rata.\n",
+        "9. Buat fungsi `catat_waktu()` untuk menampilkan waktu saat program menyelesaikan proses.\n",
+        "10. Tampilkan hasil akhir secara rapi dan mudah dibaca.\n",
+        "\n",
+        "### Contoh gambaran output proyek akhir\n",
+        "\n",
+        "```\n",
+        "================================\n",
+        "       REKAP NILAI MAHASISWA\n",
+        "================================\n",
+        "Nama       : ANDI PRATAMA\n",
+        "NIM        : 123456\n",
+        "--------------------------------\n",
+        "Nilai Algoritma   : 80\n",
+        "Nilai Basis Data  : 85\n",
+        "Nilai Struktur Data: 90\n",
+        "--------------------------------\n",
+        "Total Nilai : 255\n",
+        "Rata-rata   : 85.0\n",
+        "--------------------------------\n",
+        "Status      : Rekap selesai\n",
+        "Waktu       : [waktu program dijalankan]\n",
+        "================================\n",
+        "```\n",
+        "\n",
+        "\n",
+        "Data di atas hanya contoh tampilan. Mahasiswa harus membuat program yang menghasilkan nilai berdasarkan input pengguna.\n"
+      ],
+      "metadata": {
+        "id": "bozM5bTfQ_uD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tugas D\n",
+        "\n",
+        "import datetime\n",
+        "\n",
+        "print(\"=\" * 40)\n",
+        "print(\"       REKAP NILAI MAHASISWA\")\n",
+        "print(\"=\" * 40)\n",
+        "\n",
+        "nama = input(\"Masukkan nama mahasiswa: \")\n",
+        "nim = input(\"Masukkan NIM mahasiswa: \")\n",
+        "\n",
+        "print(\"\\nMasukkan nilai setiap mata kuliah:\")\n",
+        "\n",
+        "nilai_algoritma = float(input(\"Nilai Algoritma: \"))\n",
+        "nilai_basis_data = float(input(\"Nilai Basis Data: \"))\n",
+        "nilai_struktur_data = float(input(\"Nilai Struktur Data: \"))\n",
+        "\n",
+        "daftar_nilai = [\n",
+        "    (\"Algoritma\", nilai_algoritma),\n",
+        "    (\"Basis Data\", nilai_basis_data),\n",
+        "    (\"Struktur Data\", nilai_struktur_data)\n",
+        "]\n",
+        "\n",
+        "\n",
+        "total_nilai = (\n",
+        "    nilai_algoritma\n",
+        "    + nilai_basis_data\n",
+        "    + nilai_struktur_data\n",
+        ")\n",
+        "\n",
+        "rata_rata = total_nilai / len(daftar_nilai)\n",
+        "\n",
+        "\n",
+        "def tampilkan_hasil():\n",
+        "    print(\"-\" * 40)\n",
+        "    print(f\"Total Nilai : {total_nilai:g}\")\n",
+        "    print(f\"Rata-rata   : {rata_rata:.2f}\")\n",
+        "\n",
+        "\n",
+        "def catat_waktu():\n",
+        "    waktu_sekarang = datetime.datetime.now()\n",
+        "    print(\"Status      : Rekap selesai\")\n",
+        "    print(\n",
+        "        \"Waktu       :\",\n",
+        "        waktu_sekarang.strftime(\"%d-%m-%Y %H:%M:%S\")\n",
+        "    )\n",
+        "\n",
+        "\n",
+        "print(\"\\n\" + \"=\" * 40)\n",
+        "print(\"       REKAP NILAI MAHASISWA\")\n",
+        "print(\"=\" * 40)\n",
+        "\n",
+        "\n",
+        "print(\"Nama        :\", nama.upper())\n",
+        "print(\"NIM         :\", nim)\n",
+        "\n",
+        "print(\"-\" * 40)\n",
+        "\n",
+        "\n",
+        "for mata_kuliah, nilai in daftar_nilai:\n",
+        "    print(f\"Nilai {mata_kuliah:<14}: {nilai:g}\")\n",
+        "\n",
+        "\n",
+        "print(\"\\nNomor urut mata kuliah:\")\n",
+        "\n",
+        "nomor = 0\n",
+        "\n",
+        "while nomor < len(daftar_nilai):\n",
+        "    print(f\"{nomor + 1}. {daftar_nilai[nomor][0]}\")\n",
+        "    nomor += 1\n",
+        "\n",
+        "\n",
+        "tampilkan_hasil()\n",
+        "\n",
+        "\n",
+        "print(\"-\" * 40)\n",
+        "catat_waktu()\n",
+        "\n",
+        "print(\"=\" * 40)\n"
+      ],
+      "metadata": {
+        "id": "6gTzL_DeRDRD",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c7fa8df4-06fb-4bc9-f8c5-c6161e7c8155"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "========================================\n",
+            "       REKAP NILAI MAHASISWA\n",
+            "========================================\n",
+            "Masukkan nama mahasiswa: Hermawan Agus Pratama\n",
+            "Masukkan NIM mahasiswa: 24552021009\n",
+            "\n",
+            "Masukkan nilai setiap mata kuliah:\n",
+            "Nilai Algoritma: 10\n",
+            "Nilai Basis Data: 10\n",
+            "Nilai Struktur Data: 10\n",
+            "\n",
+            "========================================\n",
+            "       REKAP NILAI MAHASISWA\n",
+            "========================================\n",
+            "Nama        : HERMAWAN AGUS PRATAMA\n",
+            "NIM         : 24552021009\n",
+            "----------------------------------------\n",
+            "Nilai Algoritma     : 10\n",
+            "Nilai Basis Data    : 10\n",
+            "Nilai Struktur Data : 10\n",
+            "\n",
+            "Nomor urut mata kuliah:\n",
+            "1. Algoritma\n",
+            "2. Basis Data\n",
+            "3. Struktur Data\n",
+            "----------------------------------------\n",
+            "Total Nilai : 30\n",
+            "Rata-rata   : 10.00\n",
+            "----------------------------------------\n",
+            "Status      : Rekap selesai\n",
+            "Waktu       : 28-10-2026 02:56:17\n",
+            "========================================\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### **Format Pengumpulan Tugas**\n",
+        "\n",
+        "1. Kirimkan file berupa **Jupyter Notebook (`.ipynb`)** yang bersih. Seluruh kode harus dapat dijalankan dari awal hingga akhir tanpa error.\n",
+        "2. Berikan komentar (*comment*) berupa penjelasan singkat pada setiap baris kode kritis yang Anda tulis.\n",
+        "3. Jika mengerjakan tugas menggunakan **Google Colab atau GitHub**, sertakan **link notebook atau repositori** yang dapat diakses oleh dosen/asisten praktikum. Pastikan izin akses telah diatur agar file dapat dibuka dan diperiksa.\n",
+        "4. **Unggah file tugas dan/atau cantumkan link Google Colab/GitHub pada kolom pengumpulan tugas di Google Classroom** sesuai dengan ketentuan di atas. Pastikan seluruh berkas yang diperlukan telah disertakan sebelum mengirimkan tugas."
+      ],
+      "metadata": {
+        "id": "Ph4RGDDg4Dkv"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "metadata": {
+        "id": "_rVA2lSVL39E"
+      },
+      "outputs": [],
+      "source": []
+    }
+  ]
+}
